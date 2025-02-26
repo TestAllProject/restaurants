@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>About Section 1</h1>
+    {% for About_section in About_section1s %}
+        <img src="{{ About_section.img.url }}" alt="">
+        <h1>{{ About_section.title}}</h1>
+        <h1>{{About_section.description}}</h1>
+    {% endfor %}
+    <h1>About Section 2</h1>
+
+    {% for About_section22 in About_section2s%}
+        <h1>{{About_section22.title }} </h1>
+        <p> {{About_section22.description }}</p>
+    {% endfor %}
+
+    {% for menuList in menu_list%}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <p>{{menu_list.name}}</p>
+        <p> {{ menu_list.email}} </p>
+        <p> {{ menu_list.date }}</p>
+        <p> {{ menu_list.time }} </p>
+        <p> {{ menu_list.number_of_people }} </p>
+        <p> {{ menu_list.message }}</p>
+    </form>
+    {% endfor %}
+</body>
+</html>
